@@ -28,7 +28,7 @@ let pets = 2;
 console.log("current pets:", pets);
 // 10 - Create a variable called `friendsPets` and assign it the value of the number of pets your friend has
 let friendsPets = 3;
-console.log("friends have:", friendsPets, "pets");
+console.log("friend has:", friendsPets, "pets");
 // 11 - Add two pets to your `pets` variable
 pets += 2;
 console.log("added two pets:", pets);
@@ -56,7 +56,7 @@ if (pets < allowedPets) {
     console.log("I can have more pets!");
 } else if (pets === allowedPets) {
     console.log("I have enough pets");
-} else if (pets > allowedPets) {  //this could also just be an else, correct?
+} else if (pets > allowedPets) {  //this could also just be an else, correct? since Less than and equals are taken care of already
     console.log("Oh no, I have too many pets!");
 }
 // STRETCH GOALS:
@@ -66,6 +66,28 @@ if (pets < allowedPets) {
 // assigns the highest value to `mostPets`. There's several possibilities --
 // be sure to think through all the scenarios. 
 // console.log `mostPets` after the conditional has run.
+let mostPets = 0;
+let winner = "";
+
+if (pets > friendsPets) {
+    mostPets = pets;
+    winner = "me";
+} else if (friendsPets > pets) {
+    mostPets = friendsPets;
+    winner = "my friend";
+} else if (pets === friendsPets) {
+    mostPets = pets;
+    winner = "both of us, we tied!";
+}
+
+console.log(mostPets);
+console.log("the person with the most pets has", mostPets, "pets");
+console.log("the person who had the most pets is " + winner);
+
+//version 2
+array = [pets, friendsPets]
+maxPets = Math.max(...array);
+console.log("max pets via array/spread", maxPets);
 
 // 17 - Write a *switch* statement that logs:
 //      "First is the worst" if your lucky number is 1
@@ -73,7 +95,18 @@ if (pets < allowedPets) {
 //      "Third is the one with the polka dot dress" if your lucky number is 3
 //      Otherwise, log "Luck is what happens when preparation meets opportunity"
 //      You'll need to research how to use switch statements!
-
+switch (luckyNumber) {
+    case 1:
+        console.log("First is the worst");
+        break;
+    case 2:
+        console.log("Second is the best");
+        break;
+    case 3:
+        console.log("Third is the one with the polka dot dress");
+        break;
+    default: console.log("Luck is what happens when preparation meets opportunity");
+}
 // 18 -- Rewrite question 13 with a `ternary` operator. You'll need to do research!
 
-
+if (adventurous ? console.log("Adventures are great!") : console.log("How about we stay home?"));
