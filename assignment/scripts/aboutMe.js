@@ -84,7 +84,7 @@ console.log(mostPets);
 console.log("the person with the most pets has", mostPets, "pets");
 console.log("the person who had the most pets is " + winner);
 
-//version 2
+//version 2 - stretch
 array = [pets, friendsPets]
 maxPets = Math.max(...array);
 console.log("max pets via array/spread", maxPets);
